@@ -25,14 +25,17 @@ export const Chart = forwardRef((props, ref) => {
     return other
   }, [other])
   useEffect(() => {
-    console.log('container', container.current)
     const instance = new G2Chart({
       container: container.current as HTMLDivElement,
       width,
       height,
     })
-    console.log('instance', instance, container.current)
     chart.current = instance
+    if (typeof ref === "function") {
+      ref(instance)
+    } else if (ref) {
+      ref.current = instance
+    }
     return () => instance.destroy()
   }, [])
   useEffect(() => {
