@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Chart } from './lib'
+import { View, Data, Interval, Axis, TransformEncode } from './lib'
 import './App.css'
 
 function App() {
@@ -14,7 +15,11 @@ function App() {
 
   return (
     <>
-      <Chart type="interval" data={data} encode={{x: 'genre', y: 'sold'}}>
+      <Chart>
+        <Interval>
+          <Data value={data} />
+          <TransformEncode x="genre" y="sold" />
+        </Interval>
       </Chart>
     </>
   )
