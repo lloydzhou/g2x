@@ -1,25 +1,31 @@
 import { useState } from 'react'
 import { Chart } from './lib'
-import { View, Data, Interval, Axis, TransformEncode } from './lib'
+import { View, Data, FetchData, Interval } from './lib'
+import { SpaceLayer, Encode, FieldEncode, SortX, StackY, ThetaCoordinate } from './lib'
+import { Title } from './lib'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const data = [
-    { genre: 'Sports', sold: 275 },
-    { genre: 'Strategy', sold: 115 },
-    { genre: 'Action', sold: 120 },
-    { genre: 'Shooter', sold: 350 },
-    { genre: 'Other', sold: 150 },
-  ]
 
   return (
     <>
-      <Chart>
-        <Interval>
-          <Data value={data} />
-          <TransformEncode x="genre" y="sold" />
-        </Interval>
+      <Chart width={640} height={480}>
+        <SpaceLayer>
+          <FetchData value="https://gw.alipayobjects.com/os/bmw-prod/fb9db6b7-23a5-4c23-bbef-c54a55fee580.csv" format="csv" />
+          <Interval>
+            <Title title="test title" align="center" />
+            <Encode name="x" value="letter" />
+            <Encode name="y" value="frequency" />
+            <FieldEncode name="color" value="letter" />
+            <SortX reverse={true} by="y" />
+          </Interval>
+          <Interval x={300} y={65} width={300} height={300} legend={false}>
+            <FieldEncode name="y" value="frequency" />
+            <Encode name="color" value="letter" />
+            <StackY />
+            <ThetaCoordinate />
+          </Interval>
+        </SpaceLayer>
       </Chart>
     </>
   )
