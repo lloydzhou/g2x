@@ -1,6 +1,11 @@
 # antv-g2-react
 
-antv/g2 react component
+React component wrapper for [@antv/g2](https://github.com/antvis/g2).  
+
+<a href="https://www.npmjs.com/package/antv-g2-react"><img alt="NPM Package" src="https://img.shields.io/npm/v/antv-g2-react.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/antv-g2-react"><img alt="NPM Size" src="https://img.shields.io/bundlephobia/minzip/antv-g2-react"></a>
+<a href="https://www.npmjs.com/package/antv-g2-react"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/antv-g2-react?logo=npm&style=flat-square"></a>
+<a href="/LICENSE"><img src="https://img.shields.io/github/license/lloydzhou/antv-g2-react?style=flat-square" alt="MIT License"></a>
 
 
 ## demo
