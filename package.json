@@ -1,10 +1,31 @@
 {
   "name": "antv-g2-react",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.1",
+  "description": "React component wrapper for antv@g2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lloydzhou/antv-g2-react.git"
+  },
+  "author": "lloydzhou",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "tsx",
+    "antv",
+    "g2"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "module": "lib/index.js",
   "scripts": {
     "dev": "vite",
+     "lib": "tsc --jsx react-jsx src/lib/index.ts --esModuleInterop --skipLibCheck --allowSyntheticDefaultImports -t es5 -d --outDir lib",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

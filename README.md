@@ -3,6 +3,7 @@
 antv/g2 react component
 
 
+## demo
 ```
 function App() {
 
@@ -30,3 +31,6 @@ function App() {
   )
 }
 ```
+
+![image](https://github.com/lloydzhou/antv-g2-react/assets/1826685/759ca66d-6d1b-428b-a651-172db3147dbb)
+
