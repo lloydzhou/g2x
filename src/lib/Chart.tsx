@@ -243,9 +243,12 @@ export const Chart = forwardRef((props, ref) => {
           ...(style as object),
         }}
       >
-        {children ? children.type ? cloneElement(children, {ref: viewRef}) : 
-        <View ref={viewRef}>{children as any}</View>
- : null }
+        {children
+          ? children.type
+            ? cloneElement(children, {ref: viewRef})
+            : <View ref={viewRef}>{children as any}</View>
+          : null
+        }
       </div>
     </ChartContext.Provider>
   )
