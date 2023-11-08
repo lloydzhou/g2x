@@ -3,7 +3,7 @@
 React component wrapper for [@antv/g2](https://github.com/antvis/g2).  
 
 <a href="https://www.npmjs.com/package/g2x"><img alt="NPM Package" src="https://img.shields.io/npm/v/g2x.svg?style=flat-square"></a>
-<a href="https://www.npmjs.com/package/g2x"><img alt="NPM Size" src="https://img.shields.io/bundlephobia/minzip/g2x"></a>
+<a href="https://www.npmjs.com/package/g2x"><img src="https://img.shields.io/bundlejs/size/g2x"></a>
 <a href="https://www.npmjs.com/package/g2x"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/g2x?logo=npm&style=flat-square"></a>
 <a href="/LICENSE"><img src="https://img.shields.io/github/license/lloydzhou/g2x?style=flat-square" alt="MIT License"></a>
 
