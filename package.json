@@ -25,7 +25,7 @@
   "module": "lib/index.js",
   "scripts": {
     "dev": "vite",
-     "lib": "tsc --jsx react-jsx src/lib/index.ts --esModuleInterop --skipLibCheck --allowSyntheticDefaultImports -t es5 -d --outDir lib",
+     "lib": "tsc --jsx react-jsx src/index.ts --esModuleInterop --skipLibCheck --allowSyntheticDefaultImports -t es5 -d --outDir lib",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

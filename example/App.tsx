@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Chart } from './lib'
-import { View, Data, FetchData, Interval } from './lib'
-import { SpaceLayer, Encode, FieldEncode, SortX, StackY, ThetaCoordinate } from './lib'
-import { Title } from './lib'
+import { Chart } from '../src'
+import { View, Data, FetchData, Interval } from '../src'
+import { SpaceLayer, Encode, FieldEncode, SortX, StackY, ThetaCoordinate } from '../src'
+import { Title } from '../src'
 import './App.css'
 
 function App() {
