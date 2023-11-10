@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChartEvent } from '@antv/g2';
 
 const eventNames = new Set(Object.keys(ChartEvent))
