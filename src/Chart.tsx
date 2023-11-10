@@ -23,6 +23,7 @@ import type {
   TitleComponent, AxisComponent, LegendComponent, ScrollbarComponent, SliderComponent, TooltipComponent,
   PolarCoordinate, HelixCoordinate, ThetaCoordinate, CustomCoordinate, CartesianCoordinate, Cartesian3DCoordinate, ParallelCoordinate, RadialCoordinate, RadarCoordinate, GeoCoordinate,
 } from '@antv/g2'
+import { processProps } from './utils'
 
 
 export type GFC<T> = FC<Partial<T>>;
@@ -207,11 +208,18 @@ export const Chart = forwardRef((props, ref) => {
     return () => instance.destroy()
   }, [])
   useEffect(() => {
+    const { options, events } = processProps(other)
     if (chart.current && viewRef.current) {
-      console.log('debug options', chart.current.options())
-      console.log('debug options', viewRef.current.options())
-      chart.current.options({ ...other, ...viewRef.current.options() })
+      // add event
+      Object.entries(events).forEach(([n, f]) => chart.current.on(n, f))
+      chart.current.options({ ...options, ...viewRef.current.options() })
       chart.current.render()
+    }
+    return () => {
+      if (chart.current && viewRef.current) {
+        // remove event
+        Object.entries(events).forEach(([n, f]) => chart.current.off(n, f))
+      }
     }
   }, [other, viewRef.current])
 
