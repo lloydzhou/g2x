@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Chart width={640} height={480}>
+      <Chart width={640} height={480} onBeforeRender={e => console.log('before render', e)} onElementClick={e => console.log('element click',e)} onIntervalClick={e => console.log('Interval click', e)} onAfterChangeData={e => console.log('before change data', e)}>
         <SpaceLayer>
           <FetchData value="https://gw.alipayobjects.com/os/bmw-prod/fb9db6b7-23a5-4c23-bbef-c54a55fee580.csv" format="csv" />
           <Interval>
