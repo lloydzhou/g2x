@@ -25,22 +25,6 @@ import type {
 } from '@antv/g2'
 
 
-const wrapper = (WrappedComponent) => {
-  // 父类始终会拿到一个ref
-  // 使用这个ref拿到子类的props，组合起来
-  return forwardRef((props, ref) => {
-    const { children, ...other } = props
-    useImperativeHandle(ref, () => ({
-      options: () => other
-    }))
-    return (
-      <WrappedComponent ref={ref} {...other}>
-        {children}
-      </WrappedComponent>
-    )
-  })
-}
-
 export type GFC<T> = FC<Partial<T>>;
 const upper = (name: string) => name.charAt(0).toUpperCase() + name.slice(1);
 
